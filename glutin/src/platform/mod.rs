@@ -20,17 +20,18 @@ pub mod unix;
 /// Platform-specific methods for Windows.
 pub mod windows;
 /// Platform-specific methods for desktop operating systems.
-pub mod desktop {
+pub mod run_return {
     #![cfg(any(
         target_os = "windows",
         target_os = "macos",
+        target_os = "android",
         target_os = "linux",
         target_os = "dragonfly",
         target_os = "freebsd",
         target_os = "netbsd",
         target_os = "openbsd",
     ))]
-    pub use winit::platform::desktop::*;
+    pub use winit::platform::run_return::*;
 }
 
 use std::os::raw;
